@@ -1,6 +1,6 @@
-<?php
+<?PHP
 
-$nome = "Hcode";
+$nome = "Utilizando Variaveis com PHP";
 
 echo $nome;
 
