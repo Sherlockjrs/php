@@ -1,11 +1,7 @@
 <?PHP
 
-  $anoNascimento = 1990;
+$nome = "Conhecendo os tipos de Dados em PHP";
 
-  $nomeCompleto = "";
-
-  $nome1 = "João";
-  
-
+echo $nome;
 
 ?>
