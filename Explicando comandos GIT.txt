@@ -1,1 +1,5 @@
 Quando eu quiser mandar arquivos do meu PC para o GITHUB eu uso "git push origin master" e quando eu quiser puxar arquivos do GITHUB eu uso "git pull origin master".
+
+Para enviar: "git add --all" 
+              faço o commit -m "Adicionei tal arquivo"
+	      depois "git push origin master"
