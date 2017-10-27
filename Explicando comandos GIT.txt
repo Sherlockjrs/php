@@ -1,0 +1,1 @@
+Quando eu quiser mandar arquivos do meu PC para o GITHUB eu uso "git push origin master" e quando eu quiser puxar arquivos do GITHUB eu uso "git pull origin master".
