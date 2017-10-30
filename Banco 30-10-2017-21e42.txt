@@ -1,0 +1,57 @@
+CREATE DATABASE Aula04;
+
+use Aula04;
+
+CREATE TABLE Aula04 . Empregado(
+ cod_emp INT AUTO_INCREMENT,
+ nome_emp VARCHAR(45)NOT NULL,
+ salario_emp VARCHAR(45)NOT NULL,
+ comissao_emp VARCHAR(30)NOT NULL,
+ cod_depto_emp INT NOT NULL,
+PRIMARY KEY (cod_emp) );
+
+
+
+INSERT INTO Empregado (cod_emp, nome_emp, salario_emp, comissao_emp, cod_depto_emp) VALUES (01, 'Claudio', 'R$1400,00', 'R$300,00', 02);
+INSERT INTO Empregado (cod_emp, nome_emp, salario_emp, comissao_emp, cod_depto_emp) VALUES (03, 'Ezequiel', 'R$1300,00', 'R$200,00', 04);
+INSERT INTO Empregado (cod_emp, nome_emp, salario_emp, comissao_emp, cod_depto_emp) VALUES (05, 'Thomaz', 'R$1200,00', 'R$100,00', 06);
+INSERT INTO Empregado (cod_emp, nome_emp, salario_emp, comissao_emp, cod_depto_emp) VALUES (07, 'Bruno', 'R$1100,00', 'R$00,00', 08);
+INSERT INTO Empregado (cod_emp, nome_emp, salario_emp, comissao_emp, cod_depto_emp) VALUES (09, 'Francisco', 'R$1000,00', 'R$110,00', 10);
+INSERT INTO Empregado (cod_emp, nome_emp, salario_emp, comissao_emp, cod_depto_emp) VALUES (11, 'Hermes', 'R$1250,00', 'R$170,00', 12);
+
+CREATE TABLE Aula04 . Departamento(
+cod_depto INT NOT NULL AUTO_INCREMENT,
+nome_depto VARCHAR (20),
+PRIMARY KEY (cod_depto) );
+
+INSERT INTO Departamento (cod_depto, nome_depto) VALUES (015, 'Financeiro');
+INSERT INTO Departamento (cod_depto, nome_depto) VALUES (023, 'Juridico');
+INSERT INTO Departamento (cod_depto, nome_depto) VALUES (022, 'C.P.D');
+INSERT INTO Departamento (cod_depto, nome_depto) VALUES (024, 'Administrativo');
+INSERT INTO Departamento (cod_depto, nome_depto) VALUES (025, 'Saúde');
+INSERT INTO Departamento (cod_depto, nome_depto) VALUES (026, 'Eletronicos');
+
+CREATE TABLE Aula04 . Projeto(
+cod_proj INT NOT NULL AUTO_INCREMENT,
+nome_proj VARCHAR (50),
+cod_gerente_proj INT (10),
+PRIMARY KEY (cod_proj) );
+
+INSERT INTO Projeto (cod_proj, nome_proj, cod_gerente_proj) VALUES (016, 'Mercado', 0022);
+INSERT INTO Projeto (cod_proj, nome_proj, cod_gerente_proj) VALUES (017, 'Atom', 0066);
+INSERT INTO Projeto (cod_proj, nome_proj, cod_gerente_proj) VALUES (018, 'Batman', 0077);
+INSERT INTO Projeto (cod_proj, nome_proj, cod_gerente_proj) VALUES (019, 'Thor', 0088);
+INSERT INTO Projeto (cod_proj, nome_proj, cod_gerente_proj) VALUES (020, 'GitHub', 0099);
+INSERT INTO Projeto (cod_proj, nome_proj, cod_gerente_proj) VALUES (021, 'Eclipse', 0100);
+
+CREATE TABLE Aula04 . Equipe_Projeto(
+cod_proj_equipe INT NOT NULL AUTO_INCREMENT,
+cod_emp_equipe INT (100),
+PRIMARY KEY (cod_proj_equipe) );
+
+INSERT INTO Equipe_Projeto (cod_proj_equipe, cod_emp_equipe) VALUES (060, 001111);
+INSERT INTO Equipe_Projeto (cod_proj_equipe, cod_emp_equipe) VALUES (055, 00111);
+INSERT INTO Equipe_Projeto (cod_proj_equipe, cod_emp_equipe) VALUES (056, 00112);
+INSERT INTO Equipe_Projeto (cod_proj_equipe, cod_emp_equipe) VALUES (057, 00113);
+INSERT INTO Equipe_Projeto (cod_proj_equipe, cod_emp_equipe) VALUES (058, 00114);
+INSERT INTO Equipe_Projeto (cod_proj_equipe, cod_emp_equipe) VALUES (059, 00115);
