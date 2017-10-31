@@ -1,0 +1,74 @@
+CREATE DATABASE Aula05;
+USE Aula05;
+
+CREATE TABLE Aula05 . Empregado (
+	cod_emp INT NOT NULL AUTO_INCREMENT,
+    nome_emp VARCHAR (45) NOT NULL,
+    salario_emp VARCHAR (255) NOT NULL,
+    comissao_emp VARCHAR (255) NOT NULL,
+    cod_depto_emp INT NOT NULL,
+PRIMARY KEY (cod_emp) );
+INSERT INTO Empregado (cod_emp, nome_emp, salario_emp, comissao_emp, cod_depto_emp)
+VALUES (010101, 'Batman', 'R$99999999999,00', 'R$100', 020202);
+INSERT INTO Empregado (cod_emp, nome_emp, salario_emp, comissao_emp, cod_depto_emp)
+VALUES (010102, 'Flash', 'R$600,00', 'R$200', 020203);
+INSERT INTO Empregado (cod_emp, nome_emp, salario_emp, comissao_emp, cod_depto_emp)
+VALUES (010103, 'Lanterna', 'R$700,00', 'R$300', 020204);
+INSERT INTO Empregado (cod_emp, nome_emp, salario_emp, comissao_emp, cod_depto_emp)
+VALUES (15029, 'Arrow', 'R$800,00', 'R$400', 020205);
+INSERT INTO Empregado (cod_emp, nome_emp, salario_emp, comissao_emp, cod_depto_emp)
+VALUES (010105, 'Aqua', 'R$900,00', 'R$500', 020206);
+INSERT INTO Empregado (cod_emp, nome_emp, salario_emp, comissao_emp, cod_depto_emp)
+VALUES (010106, 'Wonder', 'R$1000,00', 'R$600', 020207);
+
+
+CREATE TABLE Aula05 . Departamento (
+	cod_depto INT NOT NULL AUTO_INCREMENT,
+    nome_depto VARCHAR (45) NOT NULL,
+PRIMARY KEY (cod_depto) );
+
+INSERT INTO Departamento (cod_depto, nome_depto)
+VALUES (01, 'Armas');
+INSERT INTO Departamento (cod_depto, nome_depto)
+VALUES (02, 'Bombas');
+INSERT INTO Departamento (cod_depto, nome_depto)
+VALUES (03, 'Hack');
+
+
+CREATE TABLE Aula05 . Projeto (
+	cod_proj INT NOT NULL AUTO_INCREMENT,
+    nome_proj VARCHAR (45) NOT NULL,
+    cod_gerente_proj INT NOT NULL,
+PRIMARY KEY (cod_proj) );
+
+INSERT INTO Projeto (cod_proj, nome_proj, cod_gerente_proj)
+VALUES (101010, 'PRJ01', 110);
+INSERT INTO Projeto (cod_proj, nome_proj, cod_gerente_proj)
+VALUES (101011, 'Stereo', 111);
+INSERT INTO Projeto (cod_proj, nome_proj, cod_gerente_proj)
+VALUES (101012, 'Grave', 112);
+INSERT INTO Projeto (cod_proj, nome_proj, cod_gerente_proj)
+VALUES (101013, 'Agudo', 113);
+INSERT INTO Projeto (cod_proj, nome_proj, cod_gerente_proj)
+VALUES (101014, 'Bass', 114);
+INSERT INTO Projeto (cod_proj, nome_proj, cod_gerente_proj)
+VALUES (101015, 'Sensibilite', 115);
+INSERT INTO Projeto (cod_proj, nome_proj, cod_gerente_proj)
+VALUES (010102, 'Skullcandy', 116);
+
+select * from Empregado;
+
+select * from Empregado where Cod_depto_emp = 020203 and Salario_emp < 1000;
+
+select nome_emp as 'Nome Empregado',nome_proj as 'Nome do Projeto' 
+from Empregado 
+inner join projeto 
+where nome_proj = 'PRJ01' 
+and cod_emp = 010101;
+
+select nome_emp as 'Nome Empregado', salario_emp as 'Salario', nome_depto as 'Nome do Departamento' 
+from Empregado 
+inner join Departamento
+where salario_emp < 1000
+and nome_depto = 'Bombas' 
+order by nome_emp;
