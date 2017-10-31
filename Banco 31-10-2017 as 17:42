@@ -72,3 +72,6 @@ inner join Departamento
 where salario_emp < 1000
 and nome_depto = 'Bombas' 
 order by nome_emp;
+
+select nome_emp as 'Nome', salario_emp as 'Salario', cod_proj as 'Codgo do Projeto'
+from Empregado inner join projeto where cod_proj = 020 order by nome_emp and salario_emp < 1000;
