@@ -10,8 +10,6 @@ CREATE TABLE Aula04 . Empregado(
  cod_depto_emp INT NOT NULL,
 PRIMARY KEY (cod_emp) );
 
-
-
 INSERT INTO Empregado (cod_emp, nome_emp, salario_emp, comissao_emp, cod_depto_emp) VALUES (01, 'Claudio', 'R$1400,00', 'R$300,00', 02);
 INSERT INTO Empregado (cod_emp, nome_emp, salario_emp, comissao_emp, cod_depto_emp) VALUES (03, 'Ezequiel', 'R$1300,00', 'R$200,00', 04);
 INSERT INTO Empregado (cod_emp, nome_emp, salario_emp, comissao_emp, cod_depto_emp) VALUES (05, 'Thomaz', 'R$1200,00', 'R$100,00', 06);
@@ -24,12 +22,12 @@ cod_depto INT NOT NULL AUTO_INCREMENT,
 nome_depto VARCHAR (20),
 PRIMARY KEY (cod_depto) );
 
-INSERT INTO Departamento (cod_depto, nome_depto) VALUES (015, 'Financeiro');
-INSERT INTO Departamento (cod_depto, nome_depto) VALUES (023, 'Juridico');
-INSERT INTO Departamento (cod_depto, nome_depto) VALUES (022, 'C.P.D');
-INSERT INTO Departamento (cod_depto, nome_depto) VALUES (024, 'Administrativo');
-INSERT INTO Departamento (cod_depto, nome_depto) VALUES (025, 'Saúde');
-INSERT INTO Departamento (cod_depto, nome_depto) VALUES (026, 'Eletronicos');
+INSERT INTO Departamento (cod_depto, nome_depto) VALUES (02, 'Financeiro');
+INSERT INTO Departamento (cod_depto, nome_depto) VALUES (04, 'Juridico');
+INSERT INTO Departamento (cod_depto, nome_depto) VALUES (06, 'C.P.D');
+INSERT INTO Departamento (cod_depto, nome_depto) VALUES (08, 'Administrativo');
+INSERT INTO Departamento (cod_depto, nome_depto) VALUES (10, 'SaÃºde');
+INSERT INTO Departamento (cod_depto, nome_depto) VALUES (12, 'Eletronicos');
 
 CREATE TABLE Aula04 . Projeto(
 cod_proj INT NOT NULL AUTO_INCREMENT,
@@ -55,3 +53,10 @@ INSERT INTO Equipe_Projeto (cod_proj_equipe, cod_emp_equipe) VALUES (056, 00112)
 INSERT INTO Equipe_Projeto (cod_proj_equipe, cod_emp_equipe) VALUES (057, 00113);
 INSERT INTO Equipe_Projeto (cod_proj_equipe, cod_emp_equipe) VALUES (058, 00114);
 INSERT INTO Equipe_Projeto (cod_proj_equipe, cod_emp_equipe) VALUES (059, 00115);
+
+
+select nome_emp as 'Nome Empregado',nome_proj as 'Nome do Projeto' 
+from Empregado 
+inner join projeto 
+where nome_proj = 'Atom' 
+and cod_emp = 01;
