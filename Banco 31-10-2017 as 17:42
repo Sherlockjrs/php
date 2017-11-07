@@ -9,7 +9,7 @@ CREATE TABLE Aula05 . Empregado (
     cod_depto_emp INT NOT NULL,
 PRIMARY KEY (cod_emp) );
 INSERT INTO Empregado (cod_emp, nome_emp, salario_emp, comissao_emp, cod_depto_emp)
-VALUES (010101, 'Batman', 'R$99999999999,00', 'R$100', 020202);
+VALUES (010101, 'Batman', 'R$9999,00', 'R$100', 020202);
 INSERT INTO Empregado (cod_emp, nome_emp, salario_emp, comissao_emp, cod_depto_emp)
 VALUES (010102, 'Flash', 'R$600,00', 'R$200', 020203);
 INSERT INTO Empregado (cod_emp, nome_emp, salario_emp, comissao_emp, cod_depto_emp)
